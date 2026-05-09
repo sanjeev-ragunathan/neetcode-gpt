@@ -68,3 +68,43 @@ This is how GPT decides which token comes next.
 Temperature - softmax(z/T). T - temperature. This tells how the distribution is supposed to be.  
 - Higher T value - stronger distribution (Exploitation) - forces the right one to correct with very high prob.
 - Lower T value - flatter distribution (Exploration) - forces the right one to be not so high so the model can explore other tokens - randomness.
+
+### Cross-Entropy Loss
+Entropy - uncertainity, surprise.  
+How uncertain is the model in it's prediction of the next token? High Entropy - Highly uncertain(unsure). Low Entropy - confident.
+
+Cross-Entropy Loss - How wrong is the model?
+- High when confidently wrong, and low when it's right.
+- Penalizes strongly - confident wrong predictions. Done using log.
+- Perfect Prediction - 0 loss.
+
+Binary Cross-Entropy
+
+$$
+L = -\frac{1}{n} \sum_{i=1}^{n} \left[y_i \ln(p_i) + (1-y_i)\ln(1-p_i)\right]
+$$
+
+$$
+\begin{aligned}
+n \text{: no.of samples} \\
+y_i \ln(p_i) \text{: this is for when y is true i.e. 1} \\ 
+(1-y_i)\ln(1-p_i) \text{: this is for when y is false i.e. 0}
+\end{aligned}
+$$
+
+Categorical Cross-Entropy
+
+$$
+L = -\frac{1}{n} \sum_{i=1}^{n} \sum_{c=1}^{C} y_{i,c}\ln(p_{i,c})
+$$
+
+$$
+\begin{aligned}
+n \text{: no.of samples} \\ 
+C \text{: no.of categories} \\
+y_{i,c}\ln(p_{i,c}) \text{: for only when y is true i.e. 1}
+\end{aligned}
+$$
+
+> Loss is calculated for every sample, then average is calculated.  
+> If low - model is confident and correct, if high - model is confident and wrong.
