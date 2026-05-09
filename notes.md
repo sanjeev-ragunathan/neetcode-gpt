@@ -60,3 +60,11 @@ A step function breaks the chain, `d(step)/dw = 0`. Sigmoid keeps the chain alai
 > NO squishing - no vanishing gradients.
 > Why kill negatives? - Makes some neurons inactive, increasing randomness, brings disconinuity in slope, can't convert to a linear transformation - breaks linearity - Gives Non-linearity. Also Sparsity - less neurons active - less compute - side benefit.  
 > `d(ReLU)/dz = 1 if z > 0, else 0` Always 1 - so no vanishing or exploding gradients.
+
+### Softmax
+Converts logits (raw vector) -> probabilities (probability distribution).  
+This is how GPT decides which token comes next.  
+
+Temperature - softmax(z/T). T - temperature. This tells how the distribution is supposed to be.  
+- Higher T value - stronger distribution (Exploitation) - forces the right one to correct with very high prob.
+- Lower T value - flatter distribution (Exploration) - forces the right one to be not so high so the model can explore other tokens - randomness.
