@@ -108,3 +108,18 @@ $$
 
 > Loss is calculated for every sample, then average is calculated.  
 > If low - model is confident and correct, if high - model is confident and wrong.
+
+### Linear Regression (forward pass)
+Get model prediction
+> Y = X(inputs) . W(weights); np.dot(x, w).
+> dot product is basically just matrix multiplication between just two vectors - resulting in a sigle number
+> matrix multiplication is just a combination of multiple dot products. between matrices - resulting in a matrix.
+
+Get error - MSE (Mean Squared Error)
+
+$$
+MSE = -\frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_{i})^{2}
+$$
+
+### Linear Regression (Training)
+
