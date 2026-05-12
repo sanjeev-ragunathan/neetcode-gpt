@@ -47,6 +47,12 @@ A bit more on gradients and how parameters and loss are calculated.
            # Let's assume activation is sigmoid, therefore 0.25
   ```
 
+> The derivative value tells us - the direction and the magnitude of error.  
+> +ve gradient - loss is increasing as parameter value increases  
+> -ve gradient - loss is decreasing as parameter value decreases  
+> 0 gradient - algorithm has converged  
+> size of the gradient - tells us the size of the adjustments that needs to be made. Larger size - larger adjustment.  
+
 ### Sigmoid & ReLU - Activation Functions
 What happened to step function? - derivative is 0, useless during backpropagation.  
 > In gradient Descent - we compute gradient using chain rule. `dL/dw = dL/da * da/dz * dz/dw`.  
