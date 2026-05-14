@@ -34,9 +34,9 @@ class Solution:
         #   3. Update: weights[j] -= learning_rate * gradient
         # Return np.round(final_weights, 5)
 
-        final_weights = initial_weights
+        weights = initial_weights.copy()
         for epoch in range(num_iterations):
-            Y_hat = self.get_model_prediction(X, initial_weights)
-            for j in range(len(final_weights)):
-                final_weights[j] -= self.learning_rate * self.get_derivative(Y_hat, Y, len(X), X, j)
-        return np.round(final_weights, 5)
+            Y_hat = self.get_model_prediction(X, weights)
+            for j in range(len(weights)):
+                weights[j] -= self.learning_rate * self.get_derivative(Y_hat, Y, len(X), X, j)
+        return np.round(weights, 5)
