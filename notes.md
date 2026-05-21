@@ -129,3 +129,11 @@ $$
 
 ### Linear Regression (Training)
 
+## Neural Net
+
+### Single Neuron
+result = activation(weighted sum + bias)
+> NOTE:
+> - x @ w does the weighted sum
+> - x @ w == x @ w.T for 1D Arrays, matmul would automatically do it
+
